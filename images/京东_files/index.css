@@ -1,0 +1,74 @@
+@charset "utf-8";
+/* CSS Document */
+.inner{width:1210px;margin:0 auto}
+.header .top{height:30px;background: #f1f1f1}
+.header .diqu{float: left}
+.header .nav{float: right;}
+.header .nav li,.header .diqu{float: left;line-height: 30px;font-size: 12px}
+.header .diqu a{font-family: "simsun";font-size: 12px;color:#666;display: inline-block;}
+.header .nav .link{width: 1px;height: 12px;margin-top: 9px;background: #ddd}
+.header .nav .reg{color: #c81623;padding:0 10px 0 0 ;}
+.header .nav .login{padding: 0}
+.header .nav li a{padding:0 10px;font-family: "simsun";font-size: 12px;color:#666;display: inline-block;}
+.header .nav li:hover a{color:#c81623;}
+.header .nav li:hover .jdmore{color:#666}
+.header .nav .one:hover  {background:#f1f1f1}
+.header .nav li:hover{background: #fff}
+.header .nav li i,.header .diqu i{width: 10px;height: 5px;font-style:normal;line-height: 0px;overflow: hidden;display: inline-block;padding: 0 5px;}
+.header .nav li a span{background: url(../images/jd2015img.png) no-repeat;width: 20px;height: 20px;margin: 5px 0 0 0;float: left;display: inline-block;}
+.header .nav li:hover a span{background-position: 0 -25px;}
+.header .mid .logo{float: left;padding:20px 92px 0 0; }
+.header .mid .logo img{width: 270px;height: 60px}
+.header .mid .search{float: left;padding-top:25px}
+.header .mid .search form .text{width: 450px;height: 32px;border:2px solid #c81623;padding-left: 4px;float: left;color:#666;}
+.header .mid .search form .sub{width: 80px;height: 36px;background: #c81623;color: #fff}
+.header .mid .search .tags{width: 538px;overflow: hidden;}
+.header .mid .search .tags a{display:block;line-height: 26px;height: 26px;color:#666;padding-right: 11px;float: left}
+.header .mid .search .tags a:hover{color:#c81623;}
+.header .mid .search .tags .tages_one{color:#c81623;}
+.header .mid .search .tags {color:#c81623;}
+
+.header .mid .buy{height: 34px;margin: 25px 65px 0 0;border: 1px solid #dfdfdf ;background: #f9f9f9 url(../images/jd2015img.png) no-repeat 18px -48px;float: right;position: relative;} 
+.header .mid .buy a{color:#666;display: inline-block; line-height: 34px;padding: 0px 15px 0 43px;}
+.header .mid .buy i{font-family: consolas;float: right;padding-right: 11px;line-height: 34px;font-style: normal;}
+.header .mid .buy .num{background: #c81623;position: absolute;top: -6px;left: 104px;border-radius:5px 5px 5px 0  }
+.header .mid .buy .num a{color:#fff;padding: 4px 5px ;line-height: 6px}
+.header .bot {height:44px;padding-top: 11px;border-bottom: 2px solid #c81623;}
+.header .bot .inner{position: relative;}
+.header .bot .allCategorys{width: 200px;height: 44px;text-align: left;background: #b1191a;padding-left: 10px;float: left;}
+.header .bot .allCategorys a{color: #fff;line-height: 44px;display: inline-block;font-size: 15px;}
+.header .bot ul{float: left;}
+.header .bot ul li{padding: 0 20px;float: left;font-size: 16px;line-height: 44px}
+.header .bot ul li a{display: inline-block;color:#333;}
+.header .bot ul li a:hover{color: #c81623}
+.header .bot .gogo{position: absolute;top:-10px;right:50px;width: 200px;height: 54px;}
+.header .bot .gogo a{display: inline-block;}
+.header .bot .gogo a img{width: 200px;height: 54px;}
+
+/*banner*/
+.sidebar{width: 210px;}
+.sidebar ul{width: 210px;background: #c81623;float: left}
+.sidebar ul li{line-height: 31px;padding-left: 9px;margin-left: 1px;position: relative;}
+.sidebar ul li a{color:#fff;font-size: 14px}
+.sidebar ul li i{color: #fff;float: right;padding-right:11px;font-size: 14px;font-family: consolas;font-style: normal;}
+.sidebar ul li:hover{ background: #fff;margin-left: 1px}
+.sidebar ul li:hover a{color: #c81623}
+.sidebar ul li:hover .secendlist{display: block;}
+.secendlist{width: 999px;border-right:1px solid #c81623;border-bottom:1px solid #c81623;position: absolute;top: 0;left: 209px;display: block;}
+.secendcategories{display: block;}
+.secendcategories dl{display: block;}
+.secendcategories dl dd{display: block;}
+.secendcategories dl dd a{color: #666} 
+.secendlist .dorpdown{width: 790px;float: left;}
+.sidebar ul li .secendlist .dorpdown ul{padding: 20px 0 0 20px;background: #fff;width: auto;width:758px}
+.sidebar ul li .secendlist .dorpdown ul li{float: left;background: #7C7171;line-height: 24px;margin-right:10px; padding: 0;}
+.sidebar ul li .secendlist .dorpdown ul li a{display: inline-block;color: #fff;padding:0 5px 0 8px;line-height: 24px}
+.sidebar ul li .secendlist .dorpdown ul li i{font-style: normal;font-family: consolas;font-size: 14px;color: #fff;display: inline-block;width: 20px;background: #5c5251;text-align: center;padding: 0}
+.sidebar ul li .secendlist .dorpdown ul li:hover a,.sidebar ul li .secendlist ul li:hover i{color: #fff}
+.sidebar ul li .secendlist .dorpdown ul li:hover a{background:#c81623; }
+.sidebar ul li .secendlist .dorpdown ul li:hover i{background: #b1191a}
+.sidebar ul li .secendlist .secendcategories dl{padding-left: 21px;}
+.sidebar ul li .secendlist .secendcategories dl dt,.sidebar ul li .secendlist .secendcategories dl dd{}
+.sidebar ul li .secendlist .secendcategories dl dt i{color: #666}
+.sidebar ul li .secendlist .secendcategories dl dt,.sidebar ul li .secendlist  .secendcategories dl dd{float: left;}
+.sidebar ul li .secendlist .secendcategories dl dt a,.sidebar ul li .secendlist  .secendcategories dl dd a{color: #666;}

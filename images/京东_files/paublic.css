@@ -1,0 +1,12 @@
+@charset "utf-8";
+/* CSS Document */
+body,h1,h2,h3,h4,h5,h6,p,img,input,dl,dt,dd,ul,li,input,form{margin:0;padding:0}
+body{font-size: 12px;font-family: arail,"Microsoft YaHei","simsun"}
+ul{list-style:none;}
+a{ text-decoration:none}
+img, input{border:none}
+a:hover{color:#c81623;}
+.clear:after{content: "200b";display: block;font-size: 0;height: 0;clear: both;}
+/*IE7/6*/
+.clear{*zoom:1;}
+i{font-size: 14px;font-family: consolas;font-style: normal;}
