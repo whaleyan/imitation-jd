@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+.allCategorys a{position: relative;}
+.allCategorys a i{top: 20px;right: 7px;height: 7px;overflow: hidden;font: 700 20px/16px simsun;color: #fff;transition: transform .1s ease-in 0s;-webkit-transition: -webkit-transform .1s ease-in 0s;
+    display: block;position: absolute; }
+ @myrotate{transform:rotate(180deg)}
+.allCategorys:hover a i{animation:myrotate 1s;}
+/************导航*************/
+
+.page1{display: block;}
+.nav_list{position: absolute;top:0;left: 0;display: none}
+.banner{display: none}
+
+/*breadcrumb*/
+.breadcrumb{background: #f2f2f2;height: 45px;line-height: 45px;}
+.breadcrumb strong{font-weight: 700;line-height: 20px;font-size: 18px;font-family: "microsoft yahei";}
+
+/***********商品展示区域************/
+.wares_box{background: #f2f2f2;}
+.wares_box .inner{background: #fff;}
+/*图片预览*/
+.wares_view{width:378px;float: left}
+ .view_img{	width: 350px;height: 350px;overflow: hidden;cursor:move;position: relative;margin:14px 0 14px 14px;} 
+ .view_img span {width:100px; height:100px; background:yellow; position:absolute; left:0px; top:0px; filter:alpha(opacity:30); opacity:0.3; border:1px solid black; display:none;}
+
+ .view_img img{float: left}
+ .view_img_list{position: relative;padding-bottom: 24px;}
+ .view_img_list a{background-image: url(../images/newicon20140910.png);background-repeat: no-repeat;width: 14px;height: 54px;}
+ .view_img_list .img_forward{background-position: -56px -346px;position: absolute;top: 0;left:14px;}
+ .view_img_list .img_backward{background-position: -69px -346px;position: absolute;top: 0;right:14px;}
+ .view_img_list .smallimg_list{height: 54px;overflow: hidden;padding: 0 20px 0 34px;}
+ .view_img_list .smallimg_list ul{overflow: hidden;}
+ .view_img_list .smallimg_list li{float: left;width: 62px;text-align: center;}
+ .view_img_list .smallimg_list li img{width: 50px;height: 50px;border:2px solid #fff;}
+ .view_img_list .smallimg_list li .img_hover{border:2px solid #e4393c;}
+ 
+ /*放大图片*/
+ .showimg{position: absolute;top:-378px;left: 378px;width: 400px;height:400px;overflow: hidden;z-index: 11;display:none}
+ .showimg img{float: left;position: absolute;}
+#big_Img1{position: absolute;}
+/***商品说明****/
+.wares_introduce{width:588px;float: left}  
+/*商店分享*/
+.shop_share{padding: 0px 40px 0 34px;overflow: hidden;}
+.shop_num{float:left}
+.share_link{float:right}
+.share_link a{display:inline-block;}
+.share_link a b{background:url(../images/newicon20140910.png);display: inline-block;width:20px;height: 14px;overflow: hidden;    position: relative;top: 3px;}
+.share_link a em{font-style: normal;}
+.share_link .share_list b{background-position: -157px -296px;}
+.share_link .choose_coll b{background-position: -174px -296px;}
+/*商品具体产品说明*/
+.wares_name{padding: 15px 75px 10px 0;    position: relative;}
+.wares_name h2{font-size:16px;line-height:22px;}
+.wares_discount{font-size: 14px;}
+.wares_discount span{color: #e3393c;line-height: 20px;word-break: break-all;}
+.wares_discount a{ text-decoration:underline;color:#005ea7;}
+.wares_name button{	display: inline-block;padding: 0 15px;border: solid 1px #ddd;height: 22px;line-height: 22px;border-radius: 2px;text-align: center;color: #323232;background: #f5f5f5;overflow: hidden;position:absolute;top:15px;right:0}
+.summary{ position:relative;z-index:3;background:#f2f2f2}
+.price{padding:10px 0;position: relative;}
+.price label{display:block;line-height:30px;}
+
+.price .phone_information{width:506px;padding-left:78px;}
+.price .show_price:hover .hide{display:block}
+.price .hide{display: none;position: absolute;z-index: 5;background: #f2f2f2;width: 510px!important;margin-left: -78px;padding-left: 78px;}
+.price .phone_information p{width:425px;}
+.l_introduce{float:left;width:72px; text-align:right; font-family:simsun}
+.phone_information .detail_information{color:#e4393c;    padding: 0 8px;}
+.price label p b{display: inline-block;color: #e4393c;font-size: 20px;float:left}
+.price label p em{ font-style:normal;color: #fff;background: #e4393c;padding: 1px 2px;display:inline-block;line-height:13px;}
+.price label p i{color:#e4393c;font-size: 12px;margin-left: 6px;}
+.moblephone{position: absolute;top: 40px;left: 260px;width: 185px;height:35px;line-height: 30px;}
+.moblephone .go_phone{color: #005AA0; padding-left:30px;}
+.moblephone .moblephone_icon{}
+.moblephone .moblephone_icon b{width: 19px; display:inline-block ;height: 22px;margin: 0 10px;background:url(../images/mbuy.png) no-repeat 0 0;vertical-align: middle;}
+.moblephone .moblephone_icon i{width: 10px;height: 5px;font-style: normal;    line-height: 0px;    overflow: hidden;    display: inline-block;    padding: 0 5px;}
+.moblephone:hover{background:#fff;height:100px;box-show:0 2px 3px #ccc;}
+.moblephone:hover .moblephone_icon b{background:url(../images/mbuy.png) no-repeat 0 -22px;}
+
+
+/*prom-number*/
+.prom-number{ position:absolute;top:40px;right:15px;}
+.prom-count{ font-style:normal;color:#e4393c}
+.prom-number i{width: 10px;height: 5px; line-height: 0px; overflow: hidden;display: inline-block;padding: 0 5px;}
+
+/*地址*/
+.addrs{ position:absolute;z-index:1;padding:5px 0}
+.addrs label{line-height:30px;display: block;}
+.addrs label p{float:left;    padding-right: 10px;}
+.addrs label p b{background:url(../images/92_03.jpg) no-repeat 0 0 ;display:block;width:20px;height:20px;float:left;margin:5px;}
+.addrs label p a{color:#e4393c}
+.addrs label p select{padding:3px 0}
