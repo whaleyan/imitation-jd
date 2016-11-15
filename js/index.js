@@ -3,14 +3,12 @@
 window.onload=function(){
 	var oDiv=document.getElementsByClassName('banner')[0];
 	var aBtn=oDiv.getElementsByTagName('ol')[0].children;
+
 	var oUl=oDiv.getElementsByTagName('ul')[0];
 	var aLi=oUl.children;
 	aLi[0].style.opacity=1;
-	
 	var pBtn=document.getElementById('prevBtn');
 	var nBtn=document.getElementById('nextBtn');
-	
-	
 	var n=0;//当前显示图片索引
 	//添加点击事件
 	for(var i=0; i<aBtn.length; i++){
@@ -20,8 +18,7 @@ window.onload=function(){
 				slideItem(n,this.index);
 				n=this.index;
 				changeAc();
-			}			
-			
+			}
 		};
 	};
 	
@@ -61,16 +58,12 @@ window.onload=function(){
 			aLi[a].style.display='none';
 		});
 	};
-	
-	
 	function changeAc(){
 		for(var j=0; j<aBtn.length; j++){
 			aBtn[j].className='';
 		};
 		aBtn[n].className='slide_ac';
 	}
-	
-
 	//自动播放轮播图
 	var timer=null;
 	 function bannermove(){		
@@ -99,7 +92,6 @@ window.onload=function(){
 		var f_list=document.getElementById("f_list");
 		var f_aLi=f_list.getElementsByTagName("li");
 		var afloor=document.getElementsByClassName('floor');
-
 		var arr=[];
 
 		//遍历所有的左边楼层显示
@@ -109,7 +101,6 @@ window.onload=function(){
 			json.offsetTop=afloor[i].offsetTop;
 			arr.push(json);
 			afloor[i].index=i;
-
 		}
 		//鼠标滚动显示楼
 		window.onscroll=function(){
@@ -136,7 +127,7 @@ window.onload=function(){
 			if(last_arr.length>10){
 				li_index=last_arr[last_arr.length-1].substr(1,2);
 			}else{
-				li_index=last_arr[last_arr.length-1].substr(1,1);
+				li_index=last_arr[last_arr.length-1].substr(-1,1);
 			}
 
 			for(var l=0; l<afloor.length; l++){
@@ -214,10 +205,7 @@ window.onload=function(){
 				nav.style.display="none";
 				del_li_ac();//删除所有li上的ac  
 			},200)
-
 		};
-
-
 	}
 
 	nav.onmouseover=function(ev){

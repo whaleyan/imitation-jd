@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>img</title>
+    <style>
+        body,ul,li{
+            margin:0;
+            padding:0
+        }
+        ul{list-style: none}
+        a{color:#333 ;text-decoration: none}
+        .banner{
+            float: left;
+            margin: 12px 10px;
+            width:580px;
+            height: 120px;
+            position: relative;
+            overflow: hidden;
+        }
+        .banner:hover a{display: block;}
+        .banner a {
+            position: absolute;
+            top: 45%;
+            display: block;
+            background: rgba(0,0,0,0.5);
+            width: 30px;
+            height: 50px;
+            z-index: 1;
+            font-size: 30px;
+            color: #fff;
+            text-align: center;
+        }
+        .banner .prev {
+            left: 0;
+            display: none;
+        }
+        .banner .next {
+            right: 0;
+            display: none;
+        }
+        .banner ol {
+            position: absolute;
+            bottom: -2px;
+            z-index: 1;
+            list-style: none;
+            left: 264px;
+        }
+        .banner ol li {
+            width: 18px;
+            height: 18px;
+            border-radius: 9px;
+            float: left;
+            background: #777;
+            color: #fff;
+            text-align: center;
+            margin: 0 2px;
+            cursor: pointer;
+        }
+        .banner ol .slide_ac {
+            background: #c81623;
+        }
+        .banner ul {
+            z-index: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .banner ul li img {
+            width: 580px;
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+    <a id="prevBtn" href="javascript:;" class="moveBtn prev">&laquo;</a>
+    <a id="nextBtn" href="javascript:;" class="moveBtn next">&raquo;</a>
+    <ol>
+        <li class="slide_ac">1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+    </ol>
+    <ul>
+        <li><a href=""><img src="images/57c7a58fNbb21541c.jpg" alt="" /></a></li>
+        <li><a href=""><img src="images/57c6a133N66cc7473.jpg" alt="" /></a></li>
+        <li><a href=""><img src="images/57c8e9e8N6493d61f.jpg" alt="" /></a></li>
+        <li><a href=""><img src="images/57c3fc7cN8188518d.jpg" alt="" /></a></li>
+        <li><a href=""><img src="images/57c4f29dN29af345b.jpg" alt="" /></a></li>
+        <li><a href=""><img src="images/57c8e169Nae6afdcd.jpg" alt="" /></a></li>
+    </ul>
+
+</div>
+
+    <script>
+        window.onload=function(){
+            var oDiv=document.getElementsByClassName('banner')[0];
+            var aBtn=oDiv.getElementsByTagName('ol')[0].children;
+
+            var oUl=oDiv.getElementsByTagName('ul')[0];
+            var aLi=oUl.children;
+            aLi[0].style.opacity=1;
+            var pBtn=document.getElementById('prevBtn');
+            var nBtn=document.getElementById('nextBtn');
+            var n=0;//当前显示图片索引
+            //添加点击事件
+            for(var i=0; i<aBtn.length; i++){
+                aBtn[i].index=i;//发拍照
+                aBtn[i].onmouseover=function(){
+                    if(n!=this.index){
+                        slideItem(n,this.index);
+                        n=this.index;
+                        changeAc();
+                    }
+                };
+            };
+
+            pBtn.onclick=function(){
+                if(n<1){
+                    n=aLi.length;
+                    slideItem(0,aLi.length-1);
+                }else{
+                    slideItem(n,n-1);
+                };
+                n--;
+                changeAc();
+
+            }
+
+            nBtn.onclick=function(){
+                n++;
+                if(n>aLi.length-1){
+                    n=0;
+                    slideItem(aLi.length-1,0);
+                }else{
+                    slideItem(n-1,n);
+                };
+                changeAc();
+
+            };
+
+            function slideItem(a,b){
+                aLi[a].style.display='block';
+                aLi[a].style.opacity=1;
+
+                aLi[b].style.display='block';
+                aLi[b].style.opacity=0;
+
+                move(aLi[a],'opacity',0,1000);
+                move(aLi[b],'opacity',100,1000,function(){
+                    aLi[a].style.display='none';
+                });
+            };
+            function changeAc(){
+                for(var j=0; j<aBtn.length; j++){
+                    aBtn[j].className='';
+                };
+                aBtn[n].className='slide_ac';
+            }
+            //自动播放轮播图
+            var timer=null;
+            function bannermove(){
+                clearInterval(timer);
+                timer=setInterval(function(){
+                    n++;
+                    if(n>aLi.length-1){
+                        n=0;
+                    }
+                    for (var i = 0; i < aLi.length; i++) {
+                        aLi[i].style.opacity="0";
+                        aBtn[i].className="";
+                    }
+                    aLi[n].style.opacity="1";
+                    aBtn[n].className="slide_ac";
+                },2000)
+            }
+            bannermove();
+            oDiv.onmouseover=function(){
+                clearInterval(timer)
+            }
+            oDiv.onmouseout=function(){
+                bannermove();
+            }
+
+            //读取样式
+            function getStyle(obj, styleName){
+                var value=obj.currentStyle ? obj.currentStyle[styleName]:getComputedStyle(obj, false)[styleName];
+                return styleName=='opacity' ? value=Math.round(parseFloat(value)*100):value=parseInt(value);
+            }
+            function move(obj,moveMode,end,stopTime,fn){//对象 终点 运动终点  运动方式
+
+                //距离=终点-起点;
+                var start=getStyle(obj, moveMode);//起点数值
+
+                var dis=end-start;//距离 distance
+
+                //定时器---------------------------------------------
+                var count=parseInt(stopTime/30);////次数
+                var n=0;//步进
+
+                clearInterval(obj.timer);//使用对象属性，定义计时器变量
+
+                obj.timer=setInterval(function(){
+                    n++;
+
+                    var a=1-n/count;  //a的值会越来越小
+                    var step_dis=start+dis*(1-a*a*a);
+
+                    if(moveMode=='opacity'){//透明
+                        obj.style.filter='alpha(opacity:'+step_dis+')';
+                        obj.style.opacity=step_dis/100;
+                    }
+                    else{//其他
+                        obj.style[moveMode]=step_dis+'px';
+                    }
+
+                    //取消定时器
+                    if(n==count){
+                        clearInterval(obj.timer);
+                        fn && fn();
+                    };
+
+                },30)
+            };
+        }
+    </script>
+</body>
+</html>
